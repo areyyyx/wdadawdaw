@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chcesz być moją walentynką?</title>
+    <style>
+        /* Importowanie czcionki Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            text-align: center;
+            background: url('file:///C:/Users/Dawid/Desktop/stroneczk/edfsfs.gif.gif') repeat;
+            background-size: 100px 100px; /* Zmniejsz rozmiar gifa */
+            font-family: 'Pacifico', cursive; /* Użyj ładnej czcionki */
+            color: #333; /* Kolor tekstu */
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 48px; /* Powiększ napis */
+            color: black; /* Czarny kolor napisu */
+            margin-bottom: 20px;
+        }
+        button {
+            color: black; /* Czarny napis na przycisku */
+            font-size: 28px; /* Powiększ napis na przycisku */
+            padding: 20px 40px; /* Większy przycisk */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Pacifico', cursive; /* Ta sama czcionka co w h1 */
+            margin: 10px; /* Odstęp między przyciskami */
+        }
+        #loveButton {
+            background-color: #ff69b4; /* Ciemniejszy różowy kolor przycisku TAK */
+        }
+        #loveButton:hover {
+            background-color: #ff1493; /* Jeszcze ciemniejszy róż po najechaniu */
+        }
+        #sadButton {
+            background-color: #1e90ff; /* Ciemny niebieski kolor przycisku NIE */
+        }
+        #sadButton:hover {
+            background-color: #0077cc; /* Ciemniejszy niebieski po najechaniu */
+        }
+        .hidden {
+            display: none;
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .emojis {
+            font-size: 48px; /* Powiększone emotki */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chcesz być moją walentynką?</h1>
+        <button id="loveButton">TAK</button>
+        <button id="sadButton">NIE</button>
+        <div id="happyResponse" class="hidden">
+            <p class="emojis">❤️🌹❤️🌹❤️</p> <!-- Emotki po kliknięciu TAK -->
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHFyNXU1cnQzNWgwamsycXh0aWYzM2JocGZvd2xvNTc1Y25hZnZyZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ycEx6eexqz4p7ZVrde/giphy.gif" alt="Róże dla Ciebie">
+        </div>
+        <div id="sadResponse" class="hidden">
+            <p class="emojis">😢😭😢😭😢</p> <!-- Smutne emotki po kliknięciu NIE -->
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzNhaGJidHl4cmswdXdzNzdvZTYzMWlwcWVtNzR2cDZ6ZDFrZ2Z5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/98MaHVwJOmWMz4cz1K/giphy.gif" alt="Smutny gif">
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("loveButton").addEventListener("click", function() {
+            document.getElementById("happyResponse").classList.remove("hidden");
+            document.getElementById("sadResponse").classList.add("hidden");
+        });
+
+        document.getElementById("sadButton").addEventListener("click", function() {
+            document.getElementById("sadResponse").classList.remove("hidden");
+            document.getElementById("happyResponse").classList.add("hidden");
+        });
+    </script>
+</body>
+</html>
